@@ -1,0 +1,43 @@
+{% extends "@EasyAdmin/page/content.html.twig" %}
+
+
+{% block page_title %}
+Titre de la page
+
+{% endblock %}
+
+{% block page_content %}
+<div class="row">
+
+<div class="card col-lg-3 col-sm-6">
+<div class="card-title ">
+Statistiques
+</div>
+<div class="card-body">
+<div class="row">
+<div class="col-10">Categorie</div>
+<div class="col-2"><span class="badge  badge-primary">{{ nbCat }}</span></div>
+
+</div>
+<div class="row">
+<div class="col-10">Articles</div>
+<div class="col-2"><span class="badge  badge-primary">{{ nbArt }}</span></div>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+{% endblock %}
+
+{% block content_title %}
+Gestion d'article
+
+
+{% endblock %}

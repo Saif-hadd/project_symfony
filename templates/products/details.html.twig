@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Détails de
+    {{ product.name }}
+{% endblock %}
+
+{% block body %}
+    <main class="container">
+        <section class="row">
+            <div class="col-12">
+                <h1>{{ product.name }}</h1>
+            </div>
+            <div class="col-6">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        
+                    </div>
+        <img
+                class="card-img-top mt-2"
+                src="{{ vich_uploader_asset(product, 'attachmentFile') }}"
+                alt="Card image cap"
+                style="height: 300px; width: 100%; object-fit: contain"
+            />
+                </div>
+            </div>
+            <div class="col-6">
+                <p>{{ product.description }}</p>
+                <p>Catégorie : {{ product.categories.name }}</p>
+                <p>Prix : {{ product.price / 100 }} €</p>
+                {% if product.stock > 0 %}
+                    <a href="#" class="btn btn-success">Ajouter au panier</a>
+                {% else %}
+                    <p class="text-danger">Temporairement en rupture de stock</p>
+                {% endif %}
+            </div>
+        </section>
+    </main>
+{% endblock %}
